@@ -1,0 +1,179 @@
+* {box-sizing: border-box}
+
+body {font-family: "Lato", sans-serif;}
+
+/* Стиль бокового меню */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 160px;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* .tab button.active {
+    background-color: #ccc;
+} */
+
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+
+    width: 85%;
+    border-left: none;
+    height: 100%;
+}
+
+/*Шапка и подвал*/
+.header {
+    width: 100%;
+    height: 300px;
+    padding: 80px;
+    text-align: center;
+    background: #2F6DA2 no-repeat center;
+    background-image: url(img/header.png);
+    border-radius: 5px;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    clear: both;
+    position: relative;
+    height: 100px;
+    margin-top: -200px;
+    border-radius: 5px;
+}
+
+/* Стиль содержимого внутри каждой вкладки */
+.tab_in {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.tab_in button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.tab_in button:hover {
+    background-color: #ddd;
+}
+
+.tab_in button.active {
+    background-color: #ccc;
+}
+
+.tabcontent_in {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    animation: fadeEffect 1s;/*delete*/
+    border-radius: 5px;
+}
+
+@keyframes fadeEffect { /*delete*/
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Таблицы  товаров*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+/* Выпадающий контейнер (по умолчанию скрыт). */
+.dropdown-container {
+    display: none;
+    background-color: #646262;
+}
+  
+#map {
+    width:100%;
+    height:500px
+}
+
+/* Секция о компании */
+.container {
+    border-radius: 5px;
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.img_center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.author_name {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-size: x-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}

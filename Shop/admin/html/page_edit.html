@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p><?php echo $path; ?></p>
+        <form method="post" action="panel">
+            <input type="hidden" name="action" value="edit_page"> 
+            <input type="hidden" name="path" value="<?php echo $path; ?>">
+            <textarea cols="100" rows="50" name="data"><?php echo $data; ?></textarea>
+            <input type="submit" value="Сохранить">
+        </form>
+    </body>
+</html>

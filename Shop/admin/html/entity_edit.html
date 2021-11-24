@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <form enctype="multipart/form-data" method="post" action="panel">
+            <input type="hidden" name="action" value="<?php echo $action; ?>">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <p>
+                <b>Тип</b><br>
+                <input type="input" name="type" value="<?php echo $type; ?>">
+            </p>
+            <p>
+                <b>Профиль</b><br>
+                <input type="input" name="profile" value="<?php echo $profile; ?>">
+            </p>
+            <p>
+                <b>Количество камер</b><br>
+                <input type="input" name="num_of_cam" value="<?php echo $num_of_cam; ?>">
+            </p>
+            <p>
+                <b>Стеклопакет</b><br>
+                <input type="input" name="glass_unit" value="<?php echo $glass_unit; ?>">
+            </p>
+            <p>
+                <b>Фурнитура</b><br>
+                <input type="input" name="fittings" value="<?php echo $fittings; ?>">
+            </p>
+            <p>
+                <b>Цвет</b><br>
+                <input type="input" name="colour" value="<?php echo $colour; ?>">
+            </p>
+            <p>
+                <b>Цена</b><br>
+                <input type="input" name="price" value="<?php echo $price; ?>">
+            </p>
+            <p>
+                <b>Категория</b><br>
+                <select name="category">
+                    <option value="1">Пластиковые окна</option>
+                    <option value="2">Решения для коттеджей и загородных домов</option>
+                    <option value="3">Пластиковые двери</option>
+                </select>
+            </p>
+            <p>
+                <input type="file" name="image">
+            </p>
+            <p>
+                <input type="submit" value="Сохранить">
+            </p>
+        </form>
+    </body>
+</html>

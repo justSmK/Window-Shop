@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <title>E-store</title>
+    </head>
+
+    <body>
+        <div id="header" class="header"></div>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openContent(event, 'Main')" id="defaultOpen">Главное</button>
+            <button class="tablinks" onclick="openContent(event, 'About')">О компании</button>
+            <button class="tablinks" onclick="openContent(event, 'About_author')">Об авторе</button>
+        </div>
+
+        <div id="Main" class="tabcontent">
+            <h5><a href="/Shop">Назад</a></h5>
+            <h1>Описание</h1>
+            <img class="displayed" src="<?php echo $item["image_path"]; ?>" >
+            <table>
+                <tr>
+                    <tr>
+                        <th>Тип</th>
+                        <th>Профиль</th>
+                        <th>Количество камер</th>
+                        <th>Стеклопакет</th>
+                        <th>Фурнитура</th>
+                        <th>Цвет</th>
+                        <th>Цена, руб.</th>
+                    </tr>
+
+                    <tr>
+                        <td><?php echo $item["type"]; ?></td>
+                        <td><?php echo $item["profile"]; ?></td>
+                        <td><?php echo $item["num_of_cam"]; ?></td>
+                        <td><?php echo $item["glass_unit"]; ?></td>
+                        <td><?php echo $item["fittings"]; ?></td>
+                        <td><?php echo $item["colour"]; ?></td>
+                        <td><?php echo $item["price"]; ?></td>
+                    </tr>
+                    
+                </tr>
+            </table>
+            
+        </div>
+
+        
+
+        <div id="About" class="tabcontent">
+            <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+            <h1>О компании</h1>
+            <div class="container">
+                <div style="text-align:center">
+                  <h2>Контактная информация</h2>
+                  <p></p>
+                </div>
+                <div class="row">
+                  <div class="column">
+                    <div id="map"></div>
+                  </div>
+                  <div class="column">
+                    <p>Адрес: Аксайский пр., 23, Аксай, Ростовская обл., 346720</p>
+                    <a href="tel:+78888888888">Телефон: 8(888)888-88-88</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <div id="About_author" class="tabcontent">
+            <h1>Об авторе</h1>
+            <p class="author_name">Авторитарный автор Автор Авторович Авторов</p>
+            <img class="img_center" src="img/author.png">
+        </div>
+
+        <div class="footer">
+            <a href="mailto:example@example.com">example@example.com</a><br>
+            <a href="admin/panel">Admin panel</a>
+            <p>Copyright © 2021. Сайт продажи окон</p>
+        </div>
+
+        <script>
+            function openContent(evt, contentName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(contentName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            document.getElementById("defaultOpen").click();
+
+            //
+            function openContent_in(evt, contentName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent_in");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks_in");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(contentName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            document.getElementById("defaultOpen_in").click();
+
+            //
+            function myMap() {
+                var myCenter = new google.maps.LatLng(47.29072382366302, 39.847874905192704);
+                var mapCanvas = document.getElementById("map");
+                var mapOptions = {center: myCenter, zoom: 12};
+                var map = new google.maps.Map(mapCanvas, mapOptions);
+                var marker = new google.maps.Marker({position:myCenter});
+                marker.setMap(map);
+            }
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI3pIIy2AqGssHWnLfDlxbxUFTxRj2_Yc&callback=myMap" async defer></script>
+
+    </body>
+</html>

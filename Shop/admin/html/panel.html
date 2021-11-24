@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <a href="../../Shop"><h4>Вернуться в магазин</h4></a>
+        <a href="../../Shop/admin/logout"><h4>Выход</h4></a>
+        <h1>Объекты</h1>
+        <table>
+            <tr>
+                <th>Тип</th>
+                <th>Категория</th>
+                <th>Изменить</th>
+                <th>Удаление</th>
+            </tr>
+
+            <?php foreach($entities as $item) :?>
+                <tr>
+                    <td><?php echo $item["type"]; ?></td>
+                    <td><?php echo $item["category"]; ?></td>
+                    <td>
+                        <a class="button" href="entity_edit?id=<?php echo $item["id"]; ?>">Изменить</a>
+                    </td>
+                    <td>
+                        <form method="post" action="panel">
+                            <input type="hidden" name="action" value="delete">
+                            <input type="hidden" name="id" value="<?php echo $item["id"]; ?>">
+                            <input type="submit" value="Удалить">
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <a href="entity_edit" class="button"><h3>Добавить</h3></a>
+
+        <h1>Страницы</h1>
+        <table>
+            <tr>
+                <th>Название</th>
+                <!-- <th>Content-type</th> -->
+                <th>Изменить</th>
+            </tr>
+
+            <?php foreach($pages as $item) :?>
+                <tr>
+                    <td><?php echo $item["path"]; ?></td>
+                    <!-- <td><?php echo $item["mime_type"]; ?></td> -->
+                    <td>
+                        <a href="page_edit?path=<?php echo $item["path"]; ?>">Edit</a>
+                    </td>
+                    <td>
+                        <form method="post" action="panel">
+                            <input type="hidden" name="action" value="delete">
+                            <input type="hidden" name="id" value="<?php echo $item["path"]; ?>">
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+
+        
+    </body>
+</html>

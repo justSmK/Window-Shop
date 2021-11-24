@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <title>E-store</title>
+    </head>
+
+    <body>
+        <div id="header" class="header"></div>
+
+        <div class="tab">
+
+            <button class="tablinks" onclick="openContent(event, 'Main')" id="defaultOpen">Главное</button>
+            <button class="tablinks" onclick="openContent(event, 'About')">О компании</button>
+            <button class="tablinks" onclick="openContent(event, 'About_author')">Об авторе</button>
+        </div>
+
+        <div id="Main" class="tabcontent">
+            <h1>Главная страница</h1>
+            <!---->
+            <div class="tab_in">
+                <button class="tablinks_in" onclick="openContent_in(event, 'Plastic')" id="defaultOpen_in">Пластиковые окна</button>
+                <button class="tablinks_in" onclick="openContent_in(event, 'kot_dom')">Решения для коттеджей и загородных домов</button>
+                <button class="tablinks_in" onclick="openContent_in(event, 'PlasticDoor')">Пластиковые двери</button>
+            </div>
+              
+              <!-- Tab content -->
+              <div id="Plastic" class="tabcontent_in">
+                <h3>Пластиковые окна</h3>
+                <p>
+                    Пластиковые окна — это окна из ПВХ-профиля с отделкой или без нее. 
+                    Они бывают как простыми, то есть без каких-либо особых свойств, так и специальными. 
+                    Например, существуют противовзломные, энергосберегающие, шумозащитные, звукоизоляционные окна.
+                </p>
+
+                <p>
+                    Цены на пластиковые окна различаются у разных поставщиков. 
+                    Они зависят от множества факторов, среди которых одним из самых важных являются расходы на комплектующие, изготовление и транспортировку.
+                </p>
+
+                <table>
+                    <caption>Список товаров</caption>
+                    
+                    <tr>
+                        <th>Тип</th>
+                        <th>Профиль</th>
+                        <th>Картинка</th>
+                        <th></th>
+                    </tr>
+
+                    <?php foreach($category_1 as $item) :?>
+                        <tr>
+                            <td><?php echo $item["type"]; ?></td>
+                            <td><?php echo $item["profile"]; ?></td>
+                            <td><img src="<?php echo $item["image_path"]; ?>" width="250px"></td>
+                            <td><a href="about?id=<?php echo $item["id"]; ?>">Подробнее о товаре</a></td>
+                        </tr>
+                    <?php endforeach; ?>
+
+                </table>
+              </div>
+              
+              <div id="kot_dom" class="tabcontent_in">
+                <h3>Решения для коттеджей и загородных домов</h3>
+
+                <table>
+                <caption>Список товаров</caption>
+                <tr>
+                    <th>Тип</th>
+                    <th>Профиль</th>
+                    <th>Картинка</th>
+                    <th></th>
+                </tr>
+
+                <?php foreach($category_2 as $item) :?>
+                        <tr>
+                            <td><?php echo $item["type"]; ?></td>
+                            <td><?php echo $item["profile"]; ?></td>
+                            <td><img src="<?php echo $item["image_path"]; ?>" width="250px"></td>
+                            <td><a href="about?id=<?php echo $item["id"]; ?>">Подробнее о товаре</a></td>
+                        </tr>
+                <?php endforeach; ?>
+
+                
+                </table>
+              </div>
+              
+              <div id="PlasticDoor" class="tabcontent_in">
+                <h3>Пластиковые двери</h3>
+                <p>
+                    Пластиковые двери — это межкомнатные, входные, офисные, балконные двери, порталы, раздвижные конструкции на основе ПВХ-профиля. 
+                    Доступны в разных вариантах исполнения.
+                </p>
+
+                <p>
+                    Двери из ПВХ-профиля относительно недавно пользуются спросом на рынке. 
+                    Тем не менее, они уже потеснили сильных конкурентов, по популярности успешно соревнуясь с аналогами из дерева.
+                </p>
+
+                <p>
+                    Это объясняется тем, что пластиковые двери объединяют в себе несколько достоинств:
+                    <li>эстетичный внешний вид;</li>
+                    <li>разнообразное и функциональное остекление;</li>
+                    <li>хорошая энергоэффективность;</li>
+                    <li>устойчивость к негативным влияниям (воздействию влаги, перепадам температуры, перекосу конструкции вследствие набухания или рассыхания, механическим повреждениям и пр.);</li>
+                    <li>всё это относительно недорого.</li>
+                </p>
+                <table>
+                    <caption>Список товаров</caption>
+                    <tr>
+                        <th>Тип</th>
+                        <th>Профиль</th>
+                        <th>Картинка</th>
+                        <th></th>
+                    </tr>
+
+                    <?php foreach($category_3 as $item) :?>
+                        <tr>
+                            <td><?php echo $item["type"]; ?></td>
+                            <td><?php echo $item["profile"]; ?></td>
+                            <td><img src="<?php echo $item["image_path"]; ?>" width="250px"></td>
+                            <td><a href="about?id=<?php echo $item["id"]; ?>">Подробнее о товаре</a></td>
+                        </tr>
+                    <?php endforeach; ?>
+
+
+                </table>
+              </div>
+
+            <!---->
+        </div>
+
+        <div id="About" class="tabcontent">
+            <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+            <h1>О компании</h1>
+            <div class="container">
+                <div style="text-align:center">
+                  <h2>Контактная информация</h2>
+                  <p></p>
+                </div>
+                <div class="row">
+                  <div class="column">
+                    <div id="map"></div>
+                  </div>
+                  <div class="column">
+                    <p>Адрес: Аксайский пр., 23, Аксай, Ростовская обл., 346720</p>
+                    <a href="tel:+78888888888">Телефон: 8(888)888-88-88</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <div id="About_author" class="tabcontent">
+            <h1>Об авторе</h1>
+            <p class="author_name">Авторитарный автор Автор Авторович Авторов</p>
+            <img class="img_center" src="img/author.png">
+        </div>
+
+        <div class="footer">
+            <a href="mailto:example@example.com">example@example.com</a><br>
+            <a href="admin/panel">Admin panel</a>
+            <p>Copyright © 2021. Сайт продажи окон</p>
+        </div>
+
+        <script>
+            function openContent(evt, contentName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(contentName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            document.getElementById("defaultOpen").click();
+
+            //
+            function openContent_in(evt, contentName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent_in");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks_in");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(contentName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            document.getElementById("defaultOpen_in").click();
+
+            //
+            function myMap() {
+                var myCenter = new google.maps.LatLng(47.29072382366302, 39.847874905192704);
+                var mapCanvas = document.getElementById("map");
+                var mapOptions = {center: myCenter, zoom: 12};
+                var map = new google.maps.Map(mapCanvas, mapOptions);
+                var marker = new google.maps.Marker({position:myCenter});
+                marker.setMap(map);
+            }
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI3pIIy2AqGssHWnLfDlxbxUFTxRj2_Yc&callback=myMap" async defer></script>
+
+    </body>
+</html>
