@@ -1,2 +1,2 @@
-# window_shop
+# Window Shop
 Сайт-каталог магазина окон. MySQL + PHP. 
